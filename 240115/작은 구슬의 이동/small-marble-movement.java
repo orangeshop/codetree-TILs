@@ -18,63 +18,42 @@ public class Main {
         char d = R_C_D_arr[2].charAt(0);
         int dir = 0;
 
-
-
         r--;
         c--;
 
-        // System.out.println(r + " " + c + " " + d);
-
+        
         if(d == 'L'){
-            dir = 1;
+            dir = 0;
         }
         else if(d == 'R'){
             dir = 3;
         }
         else if(d == 'U'){
-            dir = 0;
-        }
-        else if(d == 'D'){
             dir = 2;
         }
+        else if(d == 'D'){
+            dir = 1;
+        }
 
-        int dx[] = {-1,0,1,0};
-        int dy[] = {0,-1,0,1};
+        // System.out.println(r + " " + c + " " + dir);
+
+
+        int dx[] = {0,1,-1,0};
+        int dy[] = {1,0,0,-1};
         
 
-        for(int i =0; i< t; i++){
+        for(int i =0; i<= t; i++){
             r = r + dx[dir];
             c = c + dy[dir];
             
-            if(i == t-1){
-                System.out.println((r+1) + " " + (c+1));
-                break;
-            }
-
             if(r < 0 || r >= n || c < 0 || c >= n){
-                if(dir == 0){
-                    
-                    dir = 2;
-                    r = r + dx[dir];
-                    c = c + dy[dir];
-                    
-                }
-                else if(dir == 2){
-                    dir = 0;
-                    r = r + dx[dir];
-                    c = c + dy[dir];
-                }
-                else if(dir == 1){
-                    dir = 3;
-                    r = r + dx[dir];
-                    c = c + dy[dir];
-                }
-                else if(dir == 3){
-                    dir = 1;
-                    r = r + dx[dir];
-                    c = c + dy[dir];
-                }
+                dir = 3 - dir;
+                
             }
         }
+
+        
+        System.out.println((r+1) + " " + (c+1));
+    
     }
 }
