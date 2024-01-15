@@ -29,7 +29,7 @@ public class Main {
             }else if(str.charAt(i) == 'L'){
                 dir -= 1;
                 if(dir < 0){
-                    dir = 0;
+                    dir = 3;
                 }
             }
 
