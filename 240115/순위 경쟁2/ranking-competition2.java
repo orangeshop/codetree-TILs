@@ -46,7 +46,7 @@ public class Main {
                 
             }
             else if(A == B){
-                if(now_winner == -1 || now_winner == 0 || now_winner == 1){
+                if(now_winner == 0 || now_winner == 1){
                     now_winner = -1;
                     answer += 1;
                 }
