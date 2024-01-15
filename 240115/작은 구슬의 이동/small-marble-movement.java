@@ -23,7 +23,7 @@ public class Main {
         r--;
         c--;
 
-        System.out.println(r + " " + c + " " + d);
+        // System.out.println(r + " " + c + " " + d);
 
         if(d == 'L'){
             dir = 1;
@@ -47,7 +47,7 @@ public class Main {
             c = c + dy[dir];
             // System.out.println(r + " " + c);
             if(i == t-1){
-                System.out.println(r+1 + " " + c+1);
+                System.out.println((r+1) + " " + (c+1));
             }
 
             if(r < 0 || r >= n || c < 0 || c >= n){
