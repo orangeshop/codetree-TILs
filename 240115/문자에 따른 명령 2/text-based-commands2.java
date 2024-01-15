@@ -13,8 +13,8 @@ public class Main {
         int dir = 0;
         // 0 이 정면,
 
-        int dx[] = {-1,0,1,0};
-        int dy[] = {0,1,0,-1};
+        int dx[] = {0,1,0,-1};
+        int dy[] = {1,0,-1,0};
         for(int i =0; i< str.length(); i++){
             if(str.charAt(i) == 'F'){
                 x += dx[dir];
