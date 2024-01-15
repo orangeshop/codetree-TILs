@@ -18,15 +18,13 @@ public class Main {
         char d = R_C_D_arr[2].charAt(0);
         int dir = 0;
 
-        r--;
-        c--;
-
+        
         
         if(d == 'L'){
-            dir = 0;
+            dir = 3;
         }
         else if(d == 'R'){
-            dir = 3;
+            dir = 0;
         }
         else if(d == 'U'){
             dir = 2;
@@ -42,18 +40,19 @@ public class Main {
         int dy[] = {1,0,0,-1};
         
 
-        for(int i =0; i<= t; i++){
+        for(int i =0; i < t; i++){
             r = r + dx[dir];
             c = c + dy[dir];
-            
-            if(r < 0 || r >= n || c < 0 || c >= n){
+            // System.out.println(r + " " + c);
+            if(r < 1 || r > n || c < 1 || c > n){
                 dir = 3 - dir;
-                
+                r = r + dx[dir];
+                c = c + dy[dir];
             }
         }
 
         
-        System.out.println((r+1) + " " + (c+1));
+        System.out.println(r + " " + c);
     
     }
 }
