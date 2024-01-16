@@ -24,7 +24,7 @@ public class Main {
             else if(str.charAt(i) == 'L'){
                 now_dir--;
                
-                if(now_dir <= 0){
+                if(now_dir < 0){
                     now_dir = 3;
                 }
                 
