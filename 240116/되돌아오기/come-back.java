@@ -19,7 +19,7 @@ public class Main {
         int dx[] = {0,-1,0,1};
         int dy[] = {1,0,-1,0};
         int cnt = 0;
-        
+        boolean check = false;
         for(int i =0; i < n; i++){
             String M_K = br.readLine();
             String[] M_K_arr = M_K.split(" ");
@@ -30,31 +30,34 @@ public class Main {
                 if(M_K_arr[0].equals("N")){
                     x += dx[0];
                     y += dy[0];
-                    if(x == 0 && y == 0){
+                    if(x == 0 && y == 0 && check == false){
                         answer = cnt;
-
+                        check = true;
                     }
 
                 }
                 else if(M_K_arr[0].equals("W")){
                     x += dx[1];
                     y += dy[1];
-                    if(x == 0 && y == 0){
+                    if(x == 0 && y == 0 && check == false){
                         answer = cnt;
+                        check = true;
                     }
                 }
                 else if(M_K_arr[0].equals("S")){
                     x += dx[2];
                     y += dy[2];
-                    if(x == 0 && y == 0){
+                    if(x == 0 && y == 0 && check == false){
                         answer = cnt;
+                        check = true;
                     }
                 }
                 else if(M_K_arr[0].equals("E")){
                     x += dx[3];
                     y += dy[3];
-                    if(x == 0 && y == 0){
+                    if(x == 0 && y == 0 && check == false){
                         answer = cnt;
+                        check = true;
                     }
                 }
             }
