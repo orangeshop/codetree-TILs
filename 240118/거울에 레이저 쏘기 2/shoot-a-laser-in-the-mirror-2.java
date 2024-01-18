@@ -129,9 +129,15 @@ public class Main {
         }
         else if(m == 3){
             x = (k%n)-1;
+            
             y= 0;
         }
-
+        if(x < 0){
+            x = 0;
+        }
+        if(y < 0){
+            y = 0;
+        }
 
         arr[0] = x;
         arr[1] = y;
