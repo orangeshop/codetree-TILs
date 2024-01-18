@@ -61,13 +61,13 @@ public class Main {
                     dir = 1;
                 }
                 else if(dir == 1){
-                    dir = 2;
+                    dir = 0;
                 }
                 else if(dir == 2){
                     dir = 3;
                 }
                 else{
-                    dir = 0;
+                    dir = 2;
                 }
                 answer++;
             }
