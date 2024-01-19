@@ -52,7 +52,7 @@ while(len(Q) != 0):
     nx = cur[0] + dx[now_dir]
     ny = cur[1] + dy[now_dir]
 
-    if(nx < 0 or  nx >= m or ny < 0 or ny >= n or vis[nx][ny] == True):
+    if(nx < 0 or  nx >= n or ny < 0 or ny >= m or vis[nx][ny] == True):
         now_dir+=1
         if(now_dir >= 4):
             now_dir = 0
