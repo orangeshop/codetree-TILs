@@ -122,10 +122,7 @@ public class Main {
             // n 3
             // 0 1 2
         }else if(m == 1){
-            x = (k%(n+1));
-            if(x < 0){
-                x = n-1;
-            }
+            x = (k - n) -1;
             y = n-1;
             // k 4 5 6
             // k 0 1 2
@@ -133,21 +130,15 @@ public class Main {
             // 0 1 2
         }else if(m == 2){
             x = n -1;
-            y = (k%n)-1;
-            if(y < 0){
-                y = 0;
-            }
+            y = (k - 2 * n) -1;
             // k 7 8 9
             // k 0 1 2
             // n 3
             // 0 1 2
         }
         else if(m == 3){
-            x = (k%(n+1));
-            if(x< 0){
-                x = 0;
-            }
-            y= 0;
+            x =  (k - 3 * n) -1;
+            y = 0;
             // k 10 11 12
             // k 0 1 2
             // n 3
