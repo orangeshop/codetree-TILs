@@ -32,14 +32,18 @@ public class Main {
 
 
         for(int i =0; i< n; i++){  
-            int answer_tmp= 0;
+           
+
             for(int k =0; k < n -2; k++){
+                // System.out.println(i + " " + k);
+                int answer_tmp= 0;
                 answer_tmp += board[i][k];
                 answer_tmp += board[i][k+1];
                 answer_tmp += board[i][k+2];
-                
+                answer = Math.max(answer, answer_tmp);
             }
-            answer = Math.max(answer, answer_tmp);
+
+           
         }
 
         System.out.println(answer);
