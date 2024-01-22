@@ -38,12 +38,14 @@ public class Main {
                 
             }
             else{
+                board[i] = 0;
                 for(int k =0; k< tmp.length(); k++){
                     if(board[k] == 1){
                     temp_num += Math.pow(2, (tmp.length()-1) - k);
                     // System.out.println(answer);
                     }
                 }
+                board[i] = 1;
             }
             
              answer = Math.max(answer, temp_num);
