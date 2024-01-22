@@ -20,22 +20,32 @@ public class Main {
             }
         }
 
+        
+        int answer = 0;
         for(int i =0; i< tmp.length(); i++){
             if(board[i] == 0){
                 board[i] = 1;
-                break;
+                int temp_num = 0;
+                for(int k =0; k< tmp.length(); k++){
+                    if(board[k] == 1){
+                    temp_num += Math.pow(2, (tmp.length()-1) - k);
+                    // System.out.println(answer);
+                    }
+                }
+                board[i] = 0;
+                answer = Math.max(answer, temp_num);
+                
             }
             
+            
+
+            
+            // System.out.println(answer);
         }
 
-        int answer = 0;
+        
 
-        for(int i =0; i< tmp.length(); i++){
-            if(board[i] == 1){
-                answer += Math.pow(2, (tmp.length()-1) - i);
-                // System.out.println(answer);
-            }
-        }
+        
 
         System.out.println(answer);
         
