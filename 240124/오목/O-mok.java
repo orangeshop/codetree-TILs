@@ -50,6 +50,19 @@ public class Main {
 
             return now;
         }
+        
+        if(x-1 < 0|| x-2 < 0|| x-3 < 0|| x-4< 0){
+            return 0;
+        }
+        
+        if(board[x][y] == now && board[x-1][y+1] == now &&board[x-2][y+2] == now &&board[x-3][y+3] == now &&board[x-4][y+4] == now){
+            System.out.println(now);
+            System.out.println((x -1) + " " + (y + 2 + 1));
+
+            return now;
+        }
+
+      
 
         return 0;
     }
