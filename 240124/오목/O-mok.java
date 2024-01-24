@@ -17,7 +17,7 @@ public class Main {
             }
         }
 
-        for(int i =0; i<= 15; i++){
+        for(int i =0; i< 19; i++){
             
             for(int k =0; k<= 15; k++){
                 if(board[i][k] == 0) continue;
@@ -32,40 +32,66 @@ public class Main {
     }
 
     static int clac(int x, int y, int now, int[][] board){
-        if(board[x][y] == now && board[x+1][y] == now && board[x+2][y] == now && board[x+3][y] == now && board[x+4][y] == now)
-        {
-            System.out.println(now);
-            System.out.println((x + 2 + 1) + " " + (y + 1));
+        Queue<Pair> Q = new LinkedList<>();
+        Q.add(new Pair(x,y));
+
+        // 0,0 0,1 0,2
+        // 1,0 1,1 1,2
+        // 2,0 2,1 2,2
+        int[] dx = {0,1,1,-1};
+        int[] dy = {1,0,1, 1};
+
+        
+
+        for(int i =0; i < 4; i++){
+            int cnt = 1;
+            int tmp_x = x;
+            int tmp_y = y;
             
-            return now;
-        }
-        else if(board[x][y] == now && board[x][y+1] == now &&board[x][y+2] == now &&board[x][y+3] == now &&board[x][y+4] == now)
-        {
-            System.out.println(now);
-            System.out.println((x + 1) + " " + (y + 2 + 1));
+            for(int k =0; k< 4; k++){
+                int nx = tmp_x + dx[i];
+                int ny = tmp_y + dy[i];
 
-            return now;
-        }
-        else if(board[x][y] == now && board[x+1][y+1] == now &&board[x+2][y+2] == now &&board[x+3][y+3] == now &&board[x+4][y+4] == now){
-            System.out.println(now);
-            System.out.println((x + 2 + 1) + " " + (y + 2 + 1));
+                if(nx < 0 || nx >= 19 || ny < 0 || ny >= 19) continue;
+                
+                if(now == board[nx][ny]){
+                    cnt++;
+                }
+                tmp_x = nx;
+                tmp_y = ny;
+                
+            }
 
-            return now;
+            if(cnt == 5){
+                System.out.println(now);
+                if(i == 0){
+                    System.out.println((x + 1) + " " + (y + 3));
+                }
+                else if(i == 1){
+                    System.out.println((x + 3) + " " + (y + 1));
+                }
+                 else if(i == 2){
+                    System.out.println((x + 3) + " " + (y + 3));
+                }
+                else if(i == 2){
+                    System.out.println((x - 3) + " " + (y + 3));
+                }
+                
+                return now;
+            }
         }
         
-        if(x-1 < 0|| x-2 < 0|| x-3 < 0|| x-4< 0){
-            return 0;
-        }
-        
-        if(board[x][y] == now && board[x-1][y+1] == now &&board[x-2][y+2] == now &&board[x-3][y+3] == now &&board[x-4][y+4] == now){
-            System.out.println(now);
-            System.out.println((x -1) + " " + (y + 2 + 1));
-
-            return now;
-        }
-
-      
 
         return 0;
+    }
+
+    static class Pair{
+        int x = 0;
+        int y = 0;
+
+        Pair(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
     }
 }
