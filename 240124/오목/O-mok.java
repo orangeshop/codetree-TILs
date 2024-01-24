@@ -27,6 +27,8 @@ public class Main {
                 }
             }
         }
+
+        System.out.println(0);
     }
 
     static int clac(int x, int y, int now, int[][] board){
