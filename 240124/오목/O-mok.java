@@ -73,8 +73,8 @@ public class Main {
                  else if(i == 2){
                     System.out.println((x + 3) + " " + (y + 3));
                 }
-                else if(i == 2){
-                    System.out.println((x - 3) + " " + (y + 3));
+                else if(i == 3){
+                    System.out.println((x - 1) + " " + (y + 3));
                 }
                 
                 return now;
