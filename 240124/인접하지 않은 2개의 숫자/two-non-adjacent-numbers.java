@@ -22,9 +22,10 @@ public class Main {
             int tmp1 = 0;
             for(int k = i + 2; k< board.length; k++){
                 tmp1 = board[i] + board[k];
+                answer = Math.max(answer, tmp1);
             }
 
-            answer = Math.max(answer, tmp1);
+            
         }
 
         System.out.println(answer);
