@@ -17,9 +17,9 @@ public class Main {
             }
         }
 
-        for(int i =0; i< 15; i++){
+        for(int i =0; i<= 15; i++){
             
-            for(int k =0; k< 15; k++){
+            for(int k =0; k<= 15; k++){
                 if(board[i][k] == 0) continue;
                 if(clac(i,k,board[i][k], board) != 0){
                     
