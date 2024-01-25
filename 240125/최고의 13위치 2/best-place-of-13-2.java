@@ -28,7 +28,7 @@ public class Main {
 
                 for(int j = i; j < n; j++){
                     for(int l = k; l < n-2; l++){
-                        if(j == i & l < k + 2) continue;
+                        if(j == i & l < k + 3) continue;
                         // System.out.println(i + " " + k + " : " + j + " " + l);
                         int clac = board[i][k] + board[i][k+1] + board[i][k+2] + board[j][l] +  board[j][l+1] +  board[j][l+2];
                         answer = Math.max(answer, clac);
