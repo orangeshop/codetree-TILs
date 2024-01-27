@@ -21,6 +21,9 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println(answer.length()/5);
+
+        for(int i = 0; i< answer.length()%5; i++){
+            System.out.print(answer.charAt( (answer.length()/5)*5 + i));
+        }
     }
 }
