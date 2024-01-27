@@ -9,8 +9,16 @@ public class Main {
         String tmp1 = sc.nextLine();
         
         int answer = -1;
-        for(int i =0; i< tmp.length()-1; i++){
-            if((tmp.charAt(i)+"" + tmp.charAt(i+1)).equals(tmp1)){
+        for(int i =0; i< tmp.length()-tmp1.length()+1; i++){
+            String tmp2 = "";
+            for(int k = i; k < i+tmp1.length(); k++){
+                tmp2 += tmp.charAt(k);
+                // System.out.println(k);
+            }
+
+            // System.out.println(tmp2);
+
+            if(tmp2.equals(tmp1)){
                 answer = i;
                 break;
             }
