@@ -9,7 +9,7 @@ public class Main {
         String B = sc.nextLine();
         String C = sc.nextLine();
         
-        System.out.println(Math.min(Math.min(A.length(),B.length()), C.length()));
+        System.out.println((Math.max(Math.max(A.length(),B.length()), C.length()) - Math.min(Math.min(A.length(),B.length()), C.length())));
     
     }
 }
