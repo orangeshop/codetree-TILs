@@ -24,30 +24,34 @@ public class Main {
         int answer = 0;
         for(int i =0; i<n; i++){
             int ch = 1;
+            int max_ch = 1;
             for(int k =1; k <n; k++){
                 if(board[i][k] == board[i][k-1]){
                     ch++;
                 }else{
+                    max_ch = Math.max(max_ch, ch);
                     ch = 1;
                 }
             }
 
-            if(ch >= m){
+            if(max_ch >= m){
                 answer++;
             }
         }
 
         for(int i =0; i<n; i++){
             int ch = 1;
+            int max_ch = 1;
             for(int k =1; k <n; k++){
                 if(board[k][i] == board[k-1][i]){
                     ch++;
                 }else{
+                    max_ch = Math.max(max_ch, ch);
                     ch = 1;
                 }
             }
 
-            if(ch >= m){
+            if(max_ch >= m){
                 answer++;
             }
         }
