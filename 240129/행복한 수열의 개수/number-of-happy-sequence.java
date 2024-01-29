@@ -27,6 +27,8 @@ public class Main {
             for(int k =1; k <n; k++){
                 if(board[i][k] == board[i][k-1]){
                     ch++;
+                }else{
+                    ch = 1;
                 }
             }
 
@@ -40,6 +42,8 @@ public class Main {
             for(int k =1; k <n; k++){
                 if(board[k][i] == board[k-1][i]){
                     ch++;
+                }else{
+                    ch = 1;
                 }
             }
 
