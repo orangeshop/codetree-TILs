@@ -34,6 +34,8 @@ public class Main {
                 }
             }
 
+
+            max_ch = Math.max(max_ch, ch);
             if(max_ch >= m){
                 answer++;
             }
@@ -50,7 +52,7 @@ public class Main {
                     ch = 1;
                 }
             }
-
+            max_ch = Math.max(max_ch, ch);
             if(max_ch >= m){
                 answer++;
             }
