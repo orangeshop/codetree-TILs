@@ -33,7 +33,7 @@ def clac(k,m, x,y, board, n):
                 continue
             if(vis[nx][ny] == True):
                 continue
-            if(cnt[cur[0]][cur[1]]+1 > k):
+            if(cnt[cur[0]][cur[1]]+1 > k+1):
                 continue
 
             
@@ -42,6 +42,10 @@ def clac(k,m, x,y, board, n):
             vis[nx][ny] = True;
 
     answer = 0
+    # for i in range(n):
+    #     print(cnt[i])
+    # print()
+
     for i in range(n):
         for k in range(n):
             if(cnt[i][k] != -1):
