@@ -47,8 +47,8 @@ def clac(k,m, x,y, board, n):
             if(cnt[i][k] != -1):
                 answer += int(board[i][k])
 
-    # print(f"{x} {y} {answer}")
-    if((dig_cnt - (m*answer) ) < 0):
+    # print(f"{x} {y} {m*answer} {dig_cnt}")
+    if(0 <= ((m*answer) - dig_cnt)):
         return answer
     else:
         return 0
