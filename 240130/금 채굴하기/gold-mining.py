@@ -33,7 +33,7 @@ def clac(k,m, x,y, board, n):
                 continue
             if(vis[nx][ny] == True):
                 continue
-            if(cnt[cur[0]][cur[1]]+1 > k+1):
+            if(cnt[cur[0]][cur[1]]+1 > k):
                 continue
 
             
@@ -62,7 +62,7 @@ def clac(k,m, x,y, board, n):
 answer1 = 0;
 for i in range(n):
     for k in range(n):
-        for j in range(0, n):
+        for j in range(0, n+1):
             answer1 = max(clac(j,m,i,k,board,n), answer1)
 
 
