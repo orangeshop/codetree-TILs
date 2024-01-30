@@ -10,7 +10,7 @@ for i in range(n):
         board[i][k] = tmp[k]
 
 
-def clac(m, x,y, board, n):
+def clac(k,m, x,y, board, n):
     cnt = [[-1 for _ in range(n)] for _ in range(n)]
     vis = [[False for _ in range(n)] for _ in range(n)]
     
@@ -20,7 +20,7 @@ def clac(m, x,y, board, n):
     dy = [0,1,0,-1]
     vis[x][y] = True
     cnt[x][y] = 0
-    dig_cnt = m * m + (m + 1) * (m  + 1)
+    dig_cnt = k * k + (k + 1) * (k  + 1)
     while(len(Q) != 0):
         cur = Q.popleft()
         # print(cur)
@@ -33,7 +33,7 @@ def clac(m, x,y, board, n):
                 continue
             if(vis[nx][ny] == True):
                 continue
-            if(cnt[cur[0]][cur[1]]+1 > m):
+            if(cnt[cur[0]][cur[1]]+1 > k):
                 continue
 
             
@@ -48,7 +48,7 @@ def clac(m, x,y, board, n):
                 answer += int(board[i][k])
 
     # print(f"{x} {y} {answer}")
-    if(((5*answer) - dig_cnt ) > 0):
+    if((dig_cnt - (m*answer) ) < 0):
         return answer
     else:
         return 0
@@ -58,8 +58,8 @@ def clac(m, x,y, board, n):
 answer1 = 0;
 for i in range(n):
     for k in range(n):
-        for j in range(0, n+1):
-            answer1 = max(clac(j,i,k,board,n), answer1)
+        for j in range(0, n):
+            answer1 = max(clac(j,m,i,k,board,n), answer1)
 
 
 print(answer1)
