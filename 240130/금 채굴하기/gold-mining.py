@@ -58,7 +58,7 @@ def clac(m, x,y, board, n):
 answer1 = 0;
 for i in range(n):
     for k in range(n):
-        for j in range(0,3):
+        for j in range(0, n):
             answer1 = max(clac(j,i,k,board,n), answer1)
 
 
