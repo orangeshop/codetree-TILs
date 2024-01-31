@@ -20,12 +20,14 @@ public class Main {
 
     int answer = 0;
 
-    for(int i =4; i < n; i++){
-        for(int k =1; k<n; k++){
+    for(int i =1; i < n; i++){
+        for(int k =0; k<n; k++){
             // i-1, k -1
             // i,k
             int tmp_answer = 0;
+            int ch = 0;
             for(int j=0; j < n; j++){
+                ch = j;
                 int nx1 = i - j;
                 int ny1 = k + j;
 
@@ -33,7 +35,7 @@ public class Main {
                 int ny2 = ny1-1;
                 
 
-                if( nx1 < 0 || nx2 < 0 || ny1 >= n || ny2 >= n){
+                if( nx1 < 0 || nx2 < 0 || ny1 < 0 || ny2 < 0 || nx1 >= n || nx2 >= n || ny1 >= n || ny2 >= n){
                     break;
                 }
                 // System.out.println(nx1 + " " + ny1 + " " + nx2 + " " + ny2);
@@ -42,8 +44,9 @@ public class Main {
                 
 
             }
-
-            answer = Math.max(tmp_answer, answer);
+            if(ch != 1){
+                answer = Math.max(tmp_answer, answer);
+            }
             // break;
         }
         // break;
