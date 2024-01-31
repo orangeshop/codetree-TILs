@@ -18,7 +18,7 @@ public class Main {
         }
     }
     int answer = 0;
-    for(int i =n-1; i< n; i++){
+    for(int i =0; i< n; i++){
         for(int k =1; k<n; k+=2){
             // System.out.println(i + " " + k);
 
