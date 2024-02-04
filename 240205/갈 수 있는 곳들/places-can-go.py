@@ -22,7 +22,7 @@ dy = [1,0,-1,0]
 
 Q = deque();
 for i in range(m):
-    if board[ls[i][0]-1][ls[i][1]-1] == 1:
+    if board[ls[i][0]-1][ls[i][1]-1] == 1 or vis[ls[i][0]-1][ls[i][1]-1] == True:
         answer -= 1
     
     Q.append([ls[i][0]-1,ls[i][1]-1])
