@@ -22,11 +22,11 @@ dy = [1,0,-1,0]
 
 Q = deque();
 for i in range(m):
-    if(board[ls[i][0]][ls[i][1]] == 1):
+    if board[ls[i][0]-1][ls[i][1]-1] == 1:
         answer -= 1
     
-    Q.append([ls[i][0],ls[i][1]])
-    vis[ls[i][0]][ls[i][1]] = True
+    Q.append([ls[i][0]-1,ls[i][1]-1])
+    vis[ls[i][0]-1][ls[i][1]-1] = True
 
     while(len(Q) != 0):
         cur = Q.popleft()
