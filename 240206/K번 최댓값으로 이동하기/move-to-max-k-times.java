@@ -52,11 +52,20 @@ public class Main {
                 }
             }
 
-            int max_num = 0;
+            int max_num = -1;
+            // System.out.println(board[12][54] + " " + board[2][10]);
+            // for(int j =0; j < n; j++){
+            //     for(int l=0; l< n; l++){
+            //         System.out.print(vis[j][l] + " ");
+            //     }
+            //     System.out.println();
+            // }
+            // System.out.println();
 
             for(int j =0; j < n; j++){
                 for(int l=0; l< n; l++){
-                    if(vis[j][l] == true & board[j][l] < board[st_x][st_y]){
+                    
+                    if(vis[j][l] == true && board[j][l] < board[st_x][st_y]){
                         max_num = Math.max(max_num, board[j][l]);
                     }
                 }
@@ -65,7 +74,7 @@ public class Main {
             boolean ch = false;
             for(int j =0; j < n; j++){
                 for(int l=0; l< n; l++){
-                    if(board[j][l] == max_num){
+                    if(vis[j][l] == true && board[j][l] == max_num){
                         st_x = j;
                         st_y = l;
                         ch = true;
@@ -76,6 +85,12 @@ public class Main {
                     break;
                 }
             }
+
+            // for(int j =0; j < n; j++){
+            //     for(int l=0; l< n; l++){
+            //         vis[j][l] = false;
+            //     }
+            // }
             // System.out.println((st_x) + " " + (st_y));
 
         }
