@@ -31,7 +31,7 @@ public class Main {
         int answer = -1;
 
 
-
+        // answer = clacSq(0,0,2,2);
         answer = make_sq1();
         System.out.println(answer);
         
@@ -39,7 +39,7 @@ public class Main {
 
     static int make_sq1(){
         int answer = Integer.MIN_VALUE;
-        for(int i =1; i < n; i++){
+        for(int i =0; i < n; i++){
             for(int k =0; k < m; k++){
                 for(int j=i; j < n; j++){
                     for(int l =k; l < m; l++){
@@ -67,7 +67,6 @@ public class Main {
             cnt += subCnt;
 
         }
-
         return cnt;
     }
 
