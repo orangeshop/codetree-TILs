@@ -38,7 +38,7 @@ public class Main {
     }
 
     static int make_sq1(){
-        int answer = Integer.MIN_VALUE;
+        int answer = -1;
         for(int i =0; i < n; i++){
             for(int k =0; k < m; k++){
                 for(int j=i; j < n; j++){
@@ -53,7 +53,7 @@ public class Main {
     }
 
     static int clacSq(int x1, int y1, int x2, int y2){
-        int cnt = 0;
+        int cnt = -1;
         
         for(int i = x1; i <= x2; i++){
             int subCnt = 0;
@@ -63,6 +63,9 @@ public class Main {
                 }
 
                 subCnt++;
+            }
+            if(cnt == -1){
+                cnt = 0;
             }
             cnt += subCnt;
 
