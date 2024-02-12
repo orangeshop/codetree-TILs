@@ -39,30 +39,36 @@ public class Main {
 
     static int make_sq1(){
         int answer = Integer.MIN_VALUE;
-        for(int i =0; i < n; i++){
+        for(int i =1; i < n; i++){
             for(int k =0; k < m; k++){
-                boolean check = false;
-                int cnt = 0;
                 for(int j=i; j < n; j++){
                     for(int l =k; l < m; l++){
-                        if(board[j][l] < 0){
-                            check = true;
-                            break;
-                        }
-                        cnt++;
+                        answer = Math.max(answer, clacSq(i,k,j,l));
                     }
-                    if(check == true){
-                        break;
-                    }   
                 }
-
-                if(check == false){
-                    answer = Math.max(answer, cnt);
-                }
-
             }
         }
 
         return answer;
     }
+
+    static int clacSq(int x1, int y1, int x2, int y2){
+        int cnt = 0;
+        
+        for(int i = x1; i <= x2; i++){
+            int subCnt = 0;
+            for(int k = y1; k <= y2; k++){
+                if(board[i][k] < 0){
+                    return cnt;
+                }
+
+                subCnt++;
+            }
+            cnt += subCnt;
+
+        }
+
+        return cnt;
+    }
+
 }
