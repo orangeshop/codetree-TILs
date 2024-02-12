@@ -23,12 +23,15 @@ public class Main {
         for(int i =0; i < n; i++){
             String tmp = sc.nextLine();
             String[] tmpArr = tmp.split(" ");
-            for(int k =0; k < n; k++){
+            for(int k =0; k < m; k++){
                 board[i][k] = Integer.parseInt(tmpArr[k]);
             }
         }
 
         int answer = 0;
+
+
+
         answer = make_sq1();
         System.out.println(answer);
         
@@ -41,7 +44,9 @@ public class Main {
 
                 for(int j = i; j < n; j++){
                     for(int l = k; l < m; l++){
+                        
                         answer = Math.max(answer,make_sq2(i,k,j,l));
+                        
                     }
                 }
 
@@ -59,8 +64,10 @@ public class Main {
 
                 for(int j = i; j < n; j++){
                     for(int l = k; l < m; l++){
-                        if(checker(x1, y1, x2, y2, i, k, j,l) == false){
+                        if(checker(x1, y1, x2, y2, i, k, j, l) == false){
                             answer = Math.max(answer, clac_sum(x1,y1,x2,y2) + clac_sum(i,k,j,l));
+                            // System.out.println(clac_sum(x1,y1,x2,y2) + clac_sum(i,k,j,l));
+                            // System.out.println();
                         }
                     }
                 }
@@ -71,21 +78,19 @@ public class Main {
     }
 
     static int clac_sum(int x1, int y1, int x2, int y2){
+        // System.out.println("x1 : " + x1 + " y1 : " + y1 + " x2 : " + x2 + " y2 : " + y2);
         int sum =0;
         for(int i = x1; i <= x2; i++){
             for(int k = y1; k <= y2; k++){
                 sum += board[i][k];
             }
         }
+        // System.out.println(sum);
         return sum;
     }
 
     static boolean checker(int x1, int y1, int x2, int y2, int xx1, int yy1, int xx2, int yy2){
-        for(int i = 0; i < n; i++){
-            for(int k = 0; k < m; k++){
-                cnt[i][k] = 0;
-            }
-        }
+        cnt = new int[n][m];
         
         for(int i = x1; i <= x2; i++){
             for(int k = y1; k <= y2; k++){
