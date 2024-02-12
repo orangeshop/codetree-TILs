@@ -31,7 +31,7 @@ public class Main {
         int answer = -1;
 
 
-        // answer = clacSq(0,0,2,2);
+        // answer = clacSq(2,0,4,4);
         answer = make_sq1();
         System.out.println(answer);
         
@@ -58,7 +58,7 @@ public class Main {
         for(int i = x1; i <= x2; i++){
             int subCnt = 0;
             for(int k = y1; k <= y2; k++){
-                if(board[i][k] < 0){
+                if(board[i][k] <= 0){
                     return cnt;
                 }
 
