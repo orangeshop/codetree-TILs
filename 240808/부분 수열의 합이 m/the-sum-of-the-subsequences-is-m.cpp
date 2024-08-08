@@ -24,16 +24,15 @@ int main() {
 
     for(int i =0; i < V.size(); i++){
         for(int k = 10000; k >=0; k--){
-            if(k - V[i] != 1e9){
-                // cout << k << " " << k - V[i] << endl;
+            if(k - V[i] >= 0){
                 dp[k] = min(dp[k], dp[k - V[i]] + 1);
             }
+            
         }
+    
     }
 
-    // for(int i =0; i < 20; i++){
-    //     cout << dp[i] << endl;
-    // }
+    
 
     if(dp[M] == 1e9) cout << -1;
     else cout << dp[M];
