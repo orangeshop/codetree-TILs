@@ -21,11 +21,11 @@ int main() {
         V.push_back(a);
     }
 
-    dp[1] = 0;
+    dp[0] = 0;
 
     for(int i =0; i < 10005; i++){
         for(int k = 0; k < V.size(); k++){
-            if(i - V[k] > 0){
+            if(i - V[k] >= 0){
                 dp[i] = max(dp[i], dp[i - V[k]] + 1);
             }
         }
