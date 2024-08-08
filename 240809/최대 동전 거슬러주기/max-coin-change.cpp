@@ -23,7 +23,7 @@ int main() {
 
     dp[1] = 0;
 
-    for(int i =0; i < 10001; i++){
+    for(int i =0; i < 10005; i++){
         for(int k = 0; k < V.size(); k++){
             if(i - V[k] > 0){
                 dp[i] = max(dp[i], dp[i - V[k]] + 1);
