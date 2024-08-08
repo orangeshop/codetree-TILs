@@ -31,7 +31,7 @@ int main() {
         }
     }
     
-    if(dp[M] == -100){
+    if(dp[M] < 0){
         cout << -1;
     }else{
         cout << dp[M];
